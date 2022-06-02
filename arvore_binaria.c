@@ -13,25 +13,21 @@ int len = 0;
 
 Node* searchNode(int id, Node* aux){
     if(aux != NULL){   
-        if(aux->id == id){
-            return aux;
-        }else if(aux->id > id){
-            if(aux->esq != NULL){
-                return searchNode(id, aux->esq);
-            }else{
-                return aux;
-            }
+        if(aux->id == id)
+          return aux;
+        else if(aux->id > id){
+            if(aux->esq != NULL)
+              return searchNode(id, aux->esq);
+            else
+              return aux;
         }else if(aux->id < id){
-            if(aux->dir != NULL){
-                return searchNode(id, aux->dir);
-            
-            }else{
-                return aux;
-            }
+            if(aux->dir != NULL)
+              return searchNode(id, aux->dir);
+            else
+              return aux;
         }
-    }else{
-        return NULL;
-    }
+    }else
+      return NULL;
 }
 
 void addNode(int id) {
